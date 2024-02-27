@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todoapp.Database.model.Todo
 
@@ -17,6 +18,7 @@ class ListAdapter(var items:MutableList<Todo>?): RecyclerView.Adapter<ListAdapte
         var Desc:TextView=itemView.findViewById(R.id.description)
         var CheckAsDone:ImageView=itemView.findViewById(R.id.check)
         var delete_pin:ImageView=itemView.findViewById(R.id.right_view)
+        var cardItem:CardView=itemView.findViewById(R.id.cardView)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
@@ -36,14 +38,16 @@ class ListAdapter(var items:MutableList<Todo>?): RecyclerView.Adapter<ListAdapte
 
         if(onItemClick!=null){
             holder.delete_pin.setOnClickListener {
-                onItemClick?.onItemClickedToBeDeleted(position,value!!)
+                onItemClick?.onItemClickedToBeDelete(position,value!!)
             }
 
+            holder.cardItem.setOnClickListener{
+                onItemClick?.onItemClickedToBeUpdate(value!!)
+            }
 
         }
 
     }
-
     fun ChangeData(Task:MutableList<Todo>)
     {
         items=Task
@@ -55,10 +59,9 @@ class ListAdapter(var items:MutableList<Todo>?): RecyclerView.Adapter<ListAdapte
 
     interface onItemClicked{
 
-        fun onItemClickedToBeDeleted(position:Int,todo:Todo)
+        fun onItemClickedToBeDelete(position:Int, todo:Todo)
 
-
-
+        fun onItemClickedToBeUpdate(todo:Todo)
 
     }
 }

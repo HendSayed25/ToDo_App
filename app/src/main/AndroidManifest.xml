@@ -15,7 +15,7 @@
 
         <activity
             android:name=".UpdateToDo"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".HomeActivity"
             android:exported="true">

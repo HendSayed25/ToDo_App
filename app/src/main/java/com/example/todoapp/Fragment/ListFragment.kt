@@ -1,5 +1,6 @@
 package com.example.todoapp.Fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,12 +14,14 @@ import com.example.todoapp.Database.MyDataBase
 import com.example.todoapp.Database.model.Todo
 import com.example.todoapp.ListAdapter
 import com.example.todoapp.R
+import com.example.todoapp.UpdateToDo
 import com.example.todoapp.clearTime
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.datepicker.MaterialCalendar
 import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView
 import com.zerobranch.layout.SwipeLayout
+import java.text.SimpleDateFormat
 import java.util.Calendar
 
 class ListFragment: Fragment() {
@@ -71,7 +74,7 @@ class ListFragment: Fragment() {
     {
         adapter.onItemClick=object:ListAdapter.onItemClicked{
 
-            override fun onItemClickedToBeDeleted(position: Int,todo:Todo) {
+            override fun onItemClickedToBeDelete(position: Int, todo:Todo) {
 
                 //delete from GUI
                 tasksList.removeAt(position)//remove from list
@@ -87,16 +90,27 @@ class ListFragment: Fragment() {
                 getTaskListFromDB()
             }
 
+            override fun onItemClickedToBeUpdate(todo: Todo) {
+                var intent=Intent(requireContext(),UpdateToDo::class.java)
+                intent.putExtra("todo",todo)
+                startActivity(intent)
+            }
+
 
         }
     }
 
     fun getTaskListFromDB()
     {
+        //this to clear the time in the date
+        var formatter = SimpleDateFormat("dd-MMMM-yyyy")
+        var formattedDate = formatter.parse(formatter.format(date.time))
+
         //when i try to add task and not open list fragment should not do anything
         if(context==null)return
-        //  date.time return time in millseconds so when add new task not appear in the same minute to ignore this problem  will ignore the time and need only the day using class extenstion
-        tasksList=MyDataBase.getInstance(requireContext()).todoDao().getAllTodoByDate(date.clearTime().time)
+
+        tasksList=MyDataBase.getInstance(requireContext()).todoDao().getAllTodoByDate(formattedDate)
+       // Log.e("date is",""+formattedDate)
         adapter.ChangeData(tasksList.toMutableList())
     }
 }

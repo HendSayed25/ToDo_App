@@ -5,5 +5,6 @@
     <color name="blue">#5D9CEC</color>
     <color name="blue_dark">#255695</color>
     <color name="green">#61E757</color>
+    <color name="back_ground_of_card">#E1CECE</color>
 
 </resources>

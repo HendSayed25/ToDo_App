@@ -3,6 +3,7 @@ package com.example.todoapp.Database.model
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 import java.util.*
 
 @Entity
@@ -18,4 +19,4 @@ data class Todo(
     val date: Date,
     @ColumnInfo
     var isDone:Boolean=false
-)
+):Serializable

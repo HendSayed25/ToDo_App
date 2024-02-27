@@ -8,12 +8,12 @@ import androidx.room.TypeConverters
 import com.example.todoapp.Database.Dao.TodoDao
 import com.example.todoapp.Database.model.Todo
 
-@Database(entities = [Todo::class],version=1)
+@Database(entities = [Todo::class],version=2)
 @TypeConverters(DateConverter::class)
 abstract class MyDataBase:RoomDatabase() {
 
     abstract fun todoDao():TodoDao
-    companion object{
+    companion object{ //used companion object to
         private const val DATABASE_NAME="todo-Database"
         private var myDatabase:MyDataBase?=null
         fun getInstance(context:Context): MyDataBase {

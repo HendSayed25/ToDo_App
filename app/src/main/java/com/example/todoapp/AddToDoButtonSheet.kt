@@ -3,6 +3,7 @@ package com.example.todoapp
 import android.app.DatePickerDialog
 import android.app.DatePickerDialog.OnDateSetListener
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +15,7 @@ import com.example.todoapp.Database.MyDataBase
 import com.example.todoapp.Database.model.Todo
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.textfield.TextInputLayout
+import java.text.SimpleDateFormat
 import java.util.Calendar
 
 //this button like the fragment
@@ -44,6 +46,7 @@ class AddToDoButtonSheet :BottomSheetDialogFragment(){
 
         // this to assign the default date in the textview is the current date
         chooseDate.setText(""+calender.get(Calendar.DAY_OF_MONTH)+"/"+(calender.get(Calendar.MONTH)+1)+"/"+calender.get(Calendar.YEAR))
+
         chooseDate.setOnClickListener{
             ShowDatePicker()
         }
@@ -106,13 +109,18 @@ class AddToDoButtonSheet :BottomSheetDialogFragment(){
 
     private fun insertToDo(title:String, details:String)
     {
+
+        var formatter = SimpleDateFormat("dd-MMMM-yyyy")
+        var formattedDate = formatter.parse(formatter.format(calender.time))
+
         val todo= Todo(
             name=title,
             details=details,
-            date=calender.clearTime().time,
+            date=formattedDate,
             isDone = false
         )
         MyDataBase.getInstance(requireContext().applicationContext).todoDao().addTodo(todo)
+
 
         Toast.makeText(requireContext(),"Task Added Sucessfully",Toast.LENGTH_LONG).show()
 
