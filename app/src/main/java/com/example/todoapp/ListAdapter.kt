@@ -1,5 +1,6 @@
 package com.example.todoapp
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +18,7 @@ class ListAdapter(var items:MutableList<Todo>?): RecyclerView.Adapter<ListAdapte
         var Title:TextView=itemView.findViewById(R.id.title_of_task)
         var Desc:TextView=itemView.findViewById(R.id.description)
         var CheckAsDone:ImageView=itemView.findViewById(R.id.check)
+        var done:TextView=itemView.findViewById(R.id.done)
         var delete_pin:ImageView=itemView.findViewById(R.id.right_view)
         var cardItem:CardView=itemView.findViewById(R.id.cardView)
     }
@@ -36,6 +38,18 @@ class ListAdapter(var items:MutableList<Todo>?): RecyclerView.Adapter<ListAdapte
         holder.Title.setText(value?.name)
         holder.Desc.setText(value?.details)
 
+        if(value?.isDone==true){
+            holder.done.visibility=View.VISIBLE
+            holder.CheckAsDone.visibility=View.INVISIBLE
+            holder.Title.setTextColor(Color.parseColor("#61E757"))
+            holder.Desc.setTextColor(Color.parseColor("#61E757"))
+        }
+        else{
+            holder.done.visibility=View.INVISIBLE
+            holder.CheckAsDone.visibility=View.VISIBLE
+
+        }
+
         if(onItemClick!=null){
             holder.delete_pin.setOnClickListener {
                 onItemClick?.onItemClickedToBeDelete(position,value!!)
@@ -43,6 +57,10 @@ class ListAdapter(var items:MutableList<Todo>?): RecyclerView.Adapter<ListAdapte
 
             holder.cardItem.setOnClickListener{
                 onItemClick?.onItemClickedToBeUpdate(value!!)
+            }
+
+            holder.CheckAsDone.setOnClickListener {
+                onItemClick?.checkAsDone(holder,value!!)
             }
 
         }
@@ -62,6 +80,8 @@ class ListAdapter(var items:MutableList<Todo>?): RecyclerView.Adapter<ListAdapte
         fun onItemClickedToBeDelete(position:Int, todo:Todo)
 
         fun onItemClickedToBeUpdate(todo:Todo)
+
+        fun checkAsDone(holder:ListViewHolder,todo:Todo)
 
     }
 }

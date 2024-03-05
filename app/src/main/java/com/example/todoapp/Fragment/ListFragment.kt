@@ -1,6 +1,7 @@
 package com.example.todoapp.Fragment
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -14,6 +15,7 @@ import com.example.todoapp.Database.MyDataBase
 import com.example.todoapp.Database.model.Todo
 import com.example.todoapp.ListAdapter
 import com.example.todoapp.R
+import com.example.todoapp.R.color.green
 import com.example.todoapp.UpdateToDo
 import com.example.todoapp.clearTime
 import com.google.android.material.card.MaterialCardView
@@ -30,6 +32,7 @@ class ListFragment: Fragment() {
     private var adapter=ListAdapter(null)
     private lateinit var calenderView:MaterialCalendarView
     var date =Calendar.getInstance()
+    private  lateinit var latout:SwipeLayout
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -96,6 +99,19 @@ class ListFragment: Fragment() {
                 startActivity(intent)
             }
 
+            override fun checkAsDone(holder:ListAdapter.ListViewHolder,todo:Todo) {
+
+                holder.CheckAsDone.visibility= View.INVISIBLE
+                holder.done.visibility=View.VISIBLE
+                holder.Title.setTextColor(Color.parseColor("#61E757"))
+                holder.Desc.setTextColor(Color.parseColor("#61E757"))
+
+                todo.isDone=true
+
+                //update the database
+                MyDataBase.getInstance(requireContext()).todoDao().updateTodo(todo)
+
+            }
 
         }
     }
@@ -110,7 +126,7 @@ class ListFragment: Fragment() {
         if(context==null)return
 
         tasksList=MyDataBase.getInstance(requireContext()).todoDao().getAllTodoByDate(formattedDate)
-       // Log.e("date is",""+formattedDate)
+        Log.e("date is",""+formattedDate)
         adapter.ChangeData(tasksList.toMutableList())
     }
 }

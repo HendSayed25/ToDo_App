@@ -8,7 +8,7 @@ import androidx.room.TypeConverters
 import com.example.todoapp.Database.Dao.TodoDao
 import com.example.todoapp.Database.model.Todo
 
-@Database(entities = [Todo::class],version=2)
+@Database(entities = [Todo::class],version=3)
 @TypeConverters(DateConverter::class)
 abstract class MyDataBase:RoomDatabase() {
 

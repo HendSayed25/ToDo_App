@@ -33,8 +33,6 @@ class UpdateToDo : AppCompatActivity() {
         recieveData()
     }
 
-
-
     private fun initialize() {
 
         title=findViewById(R.id.update_task_name)
