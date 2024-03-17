@@ -15,11 +15,7 @@ import com.example.todoapp.Database.MyDataBase
 import com.example.todoapp.Database.model.Todo
 import com.example.todoapp.ListAdapter
 import com.example.todoapp.R
-import com.example.todoapp.R.color.green
 import com.example.todoapp.UpdateToDo
-import com.example.todoapp.clearTime
-import com.google.android.material.card.MaterialCardView
-import com.google.android.material.datepicker.MaterialCalendar
 import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView
 import com.zerobranch.layout.SwipeLayout

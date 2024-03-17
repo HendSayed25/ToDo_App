@@ -64,7 +64,7 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@id/line"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="title" />
+                tools:text="@string/title" />
 
             <TextView
                 android:id="@+id/description"
@@ -79,7 +79,7 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@id/line"
                 app:layout_constraintTop_toBottomOf="@+id/title_of_task"
-                tools:text="description" />
+                tools:text="@string/description" />
 
             <TextView
                 android:id="@+id/done"
@@ -89,7 +89,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:paddingVertical="10dp"
-                android:text="Done!"
+                android:text="@string/done"
                 android:textSize="25dp"
                 android:textColor="@color/green"
                 android:visibility="invisible"

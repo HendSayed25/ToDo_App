@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">تطبيق المهام</string>
+    <string name="settings">الاعدادات</string>
+    <string name="language">اللغة</string>
+    <string name="mode">الوضع</string>
+    <string name="update_todo">تحديث المهمة</string>
+    <string name="choose_date">اختيار التاريخ</string>
+    <string name="update">تحديث</string>
+    <string name="add_new_todo">اضافة مهمة جديدة</string>
+    <string name="add">اضافة</string>
+    <string name="done">تم !</string>
+    <string name="English">الانجليزيه</string>
+    <string name="Arabic">العربية</string>
+    <string name="dark">غامق</string>
+    <string name="light">فاتح</string>
+    <string name="details">الوصف</string>
+    <string name="title">اسم المهمه</string>
+    <string name="Title">اسم المهمة</string>
+    <string name="Details">وصف المهمة</string>
+</resources>

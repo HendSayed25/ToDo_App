@@ -53,7 +53,7 @@ class UpdateToDo : AppCompatActivity() {
 
                 var Title:String=title.text.toString()
                 var Details:String=details.text.toString()
-                var date: Date =Calendar.getInstance().clearTime().time
+                var date: Date =Calendar.getInstance().time
 
                 val update_todo=Todo(todo.id,Title,Details,date,false)
 
