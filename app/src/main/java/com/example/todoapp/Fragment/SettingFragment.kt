@@ -23,6 +23,9 @@ class SettingFragment:Fragment() {
     private var languages=arrayOf("English","Arabic")
     private lateinit var spin_language:Spinner
     private lateinit var spin_mode:Spinner
+    private var change_mode:Boolean=true
+    private var change_language:Boolean=true
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -53,10 +56,15 @@ class SettingFragment:Fragment() {
                 position: Int,
                 id: Long
             ) {
-                if(position==1){
-                    change("ar")
-                }else{
-                    change("en")
+                if (change_language == true) {
+                    change_language = false
+                }
+                else {
+                    if (position == 1) {
+                        change("ar")
+                    } else {
+                        change("en")
+                    }
                 }
             }
 
@@ -73,13 +81,17 @@ class SettingFragment:Fragment() {
                 position: Int,
                 id: Long
             ) {
-                if(position==0){//light
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-
+                if (change_mode == true){ //this condition to prevent the spinner to do the action which i need when fill it , only fill the spinner
+                    change_mode = false
                 }
-                else if(position==1){//dark
+                else {
+                    if (position == 0) {//light
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                    } else if (position == 1) {//dark
+
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                    }
                 }
             }
 
@@ -104,6 +116,6 @@ class SettingFragment:Fragment() {
         res.updateConfiguration(config,res.displayMetrics)
 
         // casting requireActivity of fragment as activity and restart it
-        (requireActivity() as HomeActivity).recreate()
+        (requireActivity() as HomeActivity).restartFragment()
     }
 }
