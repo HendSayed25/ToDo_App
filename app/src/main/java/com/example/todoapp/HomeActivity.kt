@@ -41,7 +41,6 @@ class HomeActivity : AppCompatActivity() {
         addButton.setOnClickListener{
             ShowAddButtonSheet()
         }
-
     }
     private fun PushFragment(fragment:Fragment)
     {
@@ -58,5 +57,12 @@ class HomeActivity : AppCompatActivity() {
                 todoListFragment.getTaskListFromDB()
             }
         }
+    }
+
+    //to restart the main activity which contains the fragment
+    fun restartFragment(){
+        val intent=intent
+        finish()
+        startActivity(intent)
     }
 }

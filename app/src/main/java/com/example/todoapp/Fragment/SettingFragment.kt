@@ -1,6 +1,5 @@
 package com.example.todoapp.Fragment
 
-import android.app.Activity
 import android.content.res.Configuration
 import android.content.res.Resources
 import android.os.Bundle
@@ -12,8 +11,8 @@ import android.widget.AdapterView.OnItemSelectedListener
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.app.ActivityCompat.recreate
 import androidx.fragment.app.Fragment
+import com.example.todoapp.HomeActivity
 import com.example.todoapp.R
 import java.util.Locale
 
@@ -47,22 +46,33 @@ class SettingFragment:Fragment() {
 
          //change language
 
-       spin_language.onItemSelectedListener=object :OnItemSelectedListener{
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                if(position==0){
-                    change("en");
-                }
-                else if(position==1){
+        spin_language.onItemSelectedListener=object :OnItemSelectedListener{
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                if(position==1){
                     change("ar")
+                }else{
+                    change("en")
                 }
             }
+
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }
+
         }
 
         //change mode
-       /* spin_mode.onItemSelectedListener=object :OnItemSelectedListener{
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        spin_mode.onItemSelectedListener=object :OnItemSelectedListener{
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
                 if(position==0){//light
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
@@ -71,29 +81,29 @@ class SettingFragment:Fragment() {
 
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                 }
-
             }
+
             override fun onNothingSelected(parent: AdapterView<*>?) {
-
             }
-        }*/
+
+        }
     }
 
     private fun fillSpinner(spinner: Spinner,item:Array<String>){
-       val  adapter_spin =ArrayAdapter<Any?>(requireContext(),android.R.layout.simple_spinner_item,item)
-       adapter_spin.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line) //this line make spaces between the items in spinner
+       val  adapter_spin =ArrayAdapter(requireContext(),android.R.layout.simple_spinner_item,item)
+       adapter_spin.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item) //this line make spaces between the items in spinner
        spinner.adapter=adapter_spin
     }
 
     private fun change(language:String) {
         val locale = Locale(language)
-        Locale.setDefault(locale)
-        val res:Resources=requireContext().resources
+        val res:Resources=resources
         val config:Configuration=res.configuration
+        Locale.setDefault(locale)
         config.setLocale(locale)
         res.updateConfiguration(config,res.displayMetrics)
 
         // casting requireActivity of fragment as activity and restart it
-        (requireActivity() as Activity).recreate()
+        (requireActivity() as HomeActivity).recreate()
     }
 }
