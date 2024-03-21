@@ -97,7 +97,6 @@ class SettingFragment:Fragment() {
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }
-
         }
     }
 

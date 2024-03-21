@@ -13,6 +13,7 @@ import androidx.core.content.ContentProviderCompat.requireContext
 import com.example.todoapp.Database.MyDataBase
 import com.example.todoapp.Database.model.Todo
 import com.google.android.material.textfield.TextInputLayout
+import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
 
@@ -25,6 +26,9 @@ class UpdateToDo : AppCompatActivity() {
     private lateinit var  update_btn: Button
     private var calender=Calendar.getInstance()
     private lateinit var todo:Todo
+    private var updateDate:Boolean=false
+    private lateinit var update_todo:Todo
+    private lateinit var old_date:Date
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_todo)
@@ -45,6 +49,7 @@ class UpdateToDo : AppCompatActivity() {
 
         choose_Date.setOnClickListener{
             ShowDatePicker()
+            updateDate=true
         }
 
         update_btn.setOnClickListener{
@@ -55,8 +60,17 @@ class UpdateToDo : AppCompatActivity() {
                 var Details:String=details.text.toString()
                 var date: Date =Calendar.getInstance().time
 
-                val update_todo=Todo(todo.id,Title,Details,date,false)
+                var formatter = SimpleDateFormat("dd-MMMM-yyyy")
+                var formattedDate = formatter.parse(formatter.format(date))
 
+
+                if(updateDate==true) {
+                     update_todo = Todo(todo.id, Title, Details, formattedDate, false)
+                }
+                else{
+                    update_todo = Todo(todo.id, Title, Details,old_date, false)
+
+                }
                 Update(update_todo)
 
             }
@@ -71,6 +85,7 @@ class UpdateToDo : AppCompatActivity() {
         title.setText(todo.name)
         details.setText(todo.details)
         choose_Date.setText(todo.date.toString())
+        old_date=todo.date
 
     }
 

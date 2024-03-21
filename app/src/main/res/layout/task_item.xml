@@ -14,23 +14,20 @@
     <ImageView
         android:id="@+id/right_view"
         android:layout_width="90dp"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="end"
-        android:background="#F3F1F0"
+        android:background="@drawable/recycle_pin"
         android:gravity="center"
-        android:padding="10dp"
-        android:src="@drawable/recycle_pin"/>
+
+        />
 
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         app:contentPadding="8dp"
-        android:layout_margin="4dp"
         app:cardCornerRadius="8dp"
         android:elevation="8dp">
         <!--    elevation to appear shadow for card, cornerRadius for border of card-->
@@ -79,7 +76,7 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@id/line"
                 app:layout_constraintTop_toBottomOf="@+id/title_of_task"
-                tools:text="@string/description" />
+                tools:text="@string/Details" />
 
             <TextView
                 android:id="@+id/done"
