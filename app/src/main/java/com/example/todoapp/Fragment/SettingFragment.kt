@@ -56,7 +56,7 @@ class SettingFragment:Fragment() {
                 position: Int,
                 id: Long
             ) {
-                if (change_language == true) {
+                if (change_language == true) { //this condition to not check when fill the spinner for the first time
                     change_language = false
                 }
                 else {

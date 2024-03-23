@@ -68,7 +68,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="10dp"
-        android:text="Choose Date"
+        android:text="@string/choosedate"
         android:textSize="15dp"
         android:paddingLeft="38dp"
         android:textStyle="bold"

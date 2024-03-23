@@ -5,7 +5,7 @@
     <string name="language">اللغة</string>
     <string name="mode">الوضع</string>
     <string name="update_todo">تحديث المهمة</string>
-    <string name="choose_date">اختيار التاريخ</string>
+    <string name="choose_date">اختار التاريخ</string>
     <string name="update">تحديث</string>
     <string name="add_new_todo">اضافة مهمة جديدة</string>
     <string name="add">اضافة</string>
@@ -18,4 +18,5 @@
     <string name="title">اسم المهمه</string>
     <string name="Title">اسم المهمة</string>
     <string name="Details">وصف المهمة</string>
+    <string name="choosedate">اختار التاريخ</string>
 </resources>

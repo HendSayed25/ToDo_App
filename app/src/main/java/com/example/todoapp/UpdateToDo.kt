@@ -139,7 +139,5 @@ class UpdateToDo : AppCompatActivity() {
 
         onBackPressed() //this function return me to the back activity
 
-
-
     }
 }
