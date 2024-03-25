@@ -63,9 +63,6 @@ class UpdateToDo : AppCompatActivity() {
                 var formatter = SimpleDateFormat("dd-MM-yyyy")
                 var formattedDate = formatter.parse(formatter.format(calender.time))
 
-                Log.e("calender is",""+calender.time)
-
-
                 if(updateDate==true) {
                      update_todo = Todo(todo.id, Title, Details, formattedDate, false)
                 }
@@ -87,7 +84,7 @@ class UpdateToDo : AppCompatActivity() {
         title.setText(todo.name)
         details.setText(todo.details)
         var formatter = SimpleDateFormat("dd-MM-yyyy")
-        var formattedDate = formatter.format(todo.date)
+        var formattedDate = formatter.format(todo.date) 
         choose_Date.setText(formattedDate)
         old_date=todo.date
 
