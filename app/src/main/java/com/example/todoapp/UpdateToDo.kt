@@ -5,6 +5,7 @@ import android.app.DatePickerDialog
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.DatePicker
 import android.widget.TextView
@@ -58,10 +59,11 @@ class UpdateToDo : AppCompatActivity() {
 
                 var Title:String=title.text.toString()
                 var Details:String=details.text.toString()
-                var date: Date =Calendar.getInstance().time
 
-                var formatter = SimpleDateFormat("dd-MMMM-yyyy")
-                var formattedDate = formatter.parse(formatter.format(date))
+                var formatter = SimpleDateFormat("dd-MM-yyyy")
+                var formattedDate = formatter.parse(formatter.format(calender.time))
+
+                Log.e("calender is",""+calender.time)
 
 
                 if(updateDate==true) {
@@ -84,7 +86,9 @@ class UpdateToDo : AppCompatActivity() {
         //insert this data into fields
         title.setText(todo.name)
         details.setText(todo.details)
-        choose_Date.setText(todo.date.toString())
+        var formatter = SimpleDateFormat("dd-MM-yyyy")
+        var formattedDate = formatter.format(todo.date)
+        choose_Date.setText(formattedDate)
         old_date=todo.date
 
     }
@@ -120,11 +124,10 @@ class UpdateToDo : AppCompatActivity() {
             DatePickerDialog(this ,object: DatePickerDialog.OnDateSetListener {
             override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
                 choose_Date.setText(""+dayOfMonth+"/"+(month+1)+"/"+year) // in calender the month begin from index 0 so we will add 1 to month
-                //to save the date
+                //to save the date which i select
                 calender.set(Calendar.YEAR,year)
                 calender.set(Calendar.MONTH,month)
                 calender.set(Calendar.DAY_OF_MONTH,dayOfMonth)
-
             }
         },calender.get(Calendar.YEAR),calender.get(Calendar.MONTH),calender.get(Calendar.DAY_OF_MONTH))
 

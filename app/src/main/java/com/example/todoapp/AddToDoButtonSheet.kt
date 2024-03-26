@@ -71,7 +71,7 @@ class AddToDoButtonSheet :BottomSheetDialogFragment(){
         val datePicker=DatePickerDialog(requireContext(),object:OnDateSetListener{
             override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
                 chooseDate.setText(""+dayOfMonth+"/"+(month+1)+"/"+year) // in calender the month begin from index 0 so we will add 1 to month
-                //to save the date
+                //to save the date which i select
                 calender.set(Calendar.YEAR,year)
                 calender.set(Calendar.MONTH,month)
                 calender.set(Calendar.DAY_OF_MONTH,dayOfMonth)

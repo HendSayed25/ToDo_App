@@ -64,5 +64,6 @@ class HomeActivity : AppCompatActivity() {
         val intent=intent
         finish()
         startActivity(intent)
+
     }
 }
