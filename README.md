@@ -1,6 +1,6 @@
 # ToDo App
-_This App You can use it to save Your Daily Tasks , Update them and Delete if You want.
-_You can also change the language and the mood of The App.
+_ This App You can use it to save Your Daily Tasks , Update and Delete Them.
+_ You can also change the language and mood of The App.
 
 
 # Screen_Shots:
@@ -18,7 +18,7 @@ _You can also change the language and the mood of The App.
 
 ![Screenshot_2024-03-24-22-40-14-573_com example todoapp](https://github.com/HendSayed25/ToDo_App/assets/125665213/301a088b-4f87-49c1-8ab6-cef26a141b74)
 
-![Screenshot_2024-03-24-22-40-24-181_com example todoapp](https://github.com/HendSayed25/ToDo_App/assets/125665213/96d0c71d-1cbf-428b-a97e-25207ab77e4c)
+![Screenshot_2024-03-25-17-31-13-358_com example todoapp](https://github.com/HendSayed25/ToDo_App/assets/125665213/e75bdca6-2bec-45a2-91c5-00de7bd62234)
 
 ![Screenshot_2024-03-24-22-40-33-738_com example todoapp](https://github.com/HendSayed25/ToDo_App/assets/125665213/92af49b3-389e-4bf4-9b1d-ef50f2cc639d)
 
