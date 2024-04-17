@@ -99,7 +99,7 @@ class ListFragment: Fragment() {
 
                 holder.CheckAsDone.visibility= View.INVISIBLE
                 holder.done.visibility=View.VISIBLE
-                holder.Title.setTextColor(Color.parseColor("#0D9276"))
+               // holder.Title.setTextColor(Color.parseColor("#0D9276"))
                 holder.Desc.setTextColor(Color.parseColor("#70B96B"))
 
                 todo.isDone=true

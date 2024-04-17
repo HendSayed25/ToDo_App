@@ -43,7 +43,7 @@ class ListAdapter(var items:MutableList<Todo>?): RecyclerView.Adapter<ListAdapte
         if(value?.isDone==true){
             holder.done.visibility=View.VISIBLE
             holder.CheckAsDone.visibility=View.INVISIBLE
-            holder.Title.setTextColor(Color.parseColor("#0D9276"))
+           // holder.Title.setTextColor(Color.parseColor("#0D9276"))
             holder.Desc.setTextColor(Color.parseColor("#0D9276"))
         }
         else{
