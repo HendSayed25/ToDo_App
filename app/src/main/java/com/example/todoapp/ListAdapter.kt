@@ -19,7 +19,9 @@ class ListAdapter(var items:MutableList<Todo>?): RecyclerView.Adapter<ListAdapte
         var Desc:TextView=itemView.findViewById(R.id.description)
         var CheckAsDone:ImageView=itemView.findViewById(R.id.check)
         var done:TextView=itemView.findViewById(R.id.done)
-        var delete_pin:ImageView=itemView.findViewById(R.id.right_view)
+        var delete_pin_right:ImageView=itemView.findViewById(R.id.right_view)
+        var delete_pin_left:ImageView=itemView.findViewById(R.id.left_view)
+
         var cardItem:CardView=itemView.findViewById(R.id.cardView)
     }
 
@@ -41,18 +43,21 @@ class ListAdapter(var items:MutableList<Todo>?): RecyclerView.Adapter<ListAdapte
         if(value?.isDone==true){
             holder.done.visibility=View.VISIBLE
             holder.CheckAsDone.visibility=View.INVISIBLE
-            holder.Title.setTextColor(Color.parseColor("#61E757"))
-            holder.Desc.setTextColor(Color.parseColor("#61E757"))
+            holder.Title.setTextColor(Color.parseColor("#0D9276"))
+            holder.Desc.setTextColor(Color.parseColor("#0D9276"))
         }
         else{
             holder.done.visibility=View.INVISIBLE
             holder.CheckAsDone.visibility=View.VISIBLE
-            holder.Title.setTextColor(Color.parseColor("#5D9CEC"))
-            holder.Desc.setTextColor(Color.parseColor("#5D9CEC"))
+            holder.Title.setTextColor(Color.parseColor("#FF5D9CEC"))
+            holder.Desc.setTextColor(Color.parseColor("#FF5D9CEC"))
         }
 
         if(onItemClick!=null){
-            holder.delete_pin.setOnClickListener {
+            holder.delete_pin_right.setOnClickListener {
+                onItemClick?.onItemClickedToBeDelete(position,value!!)
+            }
+            holder.delete_pin_left.setOnClickListener {
                 onItemClick?.onItemClickedToBeDelete(position,value!!)
             }
 

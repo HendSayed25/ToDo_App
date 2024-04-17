@@ -99,8 +99,8 @@ class ListFragment: Fragment() {
 
                 holder.CheckAsDone.visibility= View.INVISIBLE
                 holder.done.visibility=View.VISIBLE
-                holder.Title.setTextColor(Color.parseColor("#61E757"))
-                holder.Desc.setTextColor(Color.parseColor("#61E757"))
+                holder.Title.setTextColor(Color.parseColor("#0D9276"))
+                holder.Desc.setTextColor(Color.parseColor("#70B96B"))
 
                 todo.isDone=true
 
@@ -122,7 +122,7 @@ class ListFragment: Fragment() {
         if(context==null)return
 
         tasksList=MyDataBase.getInstance(requireContext()).todoDao().getAllTodoByDate(formattedDate)
-        Log.e("date is",""+formattedDate)
+       // Log.e("date is",""+formattedDate)
         adapter.ChangeData(tasksList.toMutableList())
     }
 }

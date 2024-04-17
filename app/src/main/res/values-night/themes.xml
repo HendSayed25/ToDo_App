@@ -9,8 +9,8 @@
         <item name="colorOnPrimary">@color/white</item>
 
         <!--Secondary Color-->
-        <item name="colorSecondary">@color/green</item>
-        <item name="colorSecondaryVariant">@color/green</item>
+        <item name="colorSecondary">#70B96B</item>
+        <item name="colorSecondaryVariant">#70B96B</item>
         <item name="colorOnSecondary">@color/black</item>
 
     </style>

@@ -100,8 +100,9 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:paddingVertical="10dp"
                 android:text="@string/done"
+                android:textStyle="bold"
                 android:textSize="25dp"
-                android:textColor="@color/green"
+                android:textColor="#0D9276"
                 android:visibility="invisible"
                 />
 
