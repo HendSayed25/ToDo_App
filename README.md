@@ -2,6 +2,9 @@
 _ This App You can use it to save Your Daily Tasks , Update and Delete Them.
 _ You can also change the language and mood of The App.
 
+## To Use The Same Calender Follow This ----> https://github.com/prolificinteractive/material-calendarview
+## To Use The Same SwapLayout To Delete Follow This -----> https://github.com/zerobranch/SwipeLayout
+
 
 # Screen_Shots:
 ![Screenshot_2024-03-24-22-38-13-717_com example todoapp](https://github.com/HendSayed25/ToDo_App/assets/125665213/8cd3e251-bc9b-4bbe-a5f3-ef5a657eb379)
