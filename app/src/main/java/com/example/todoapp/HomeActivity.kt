@@ -1,13 +1,21 @@
 package com.example.todoapp
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
+import android.content.res.Configuration
+import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.example.todoapp.Fragment.ListFragment
 import com.example.todoapp.Fragment.SettingFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import java.util.Locale
+
+
 
 class HomeActivity : AppCompatActivity() {
 
@@ -15,9 +23,26 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var addButton:FloatingActionButton
     var todoListFragment=ListFragment()
     var todoSettingFragment=SettingFragment()
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home_activity)
+
+
+        //to apply the last language the user choose before close the app
+        val selected_language= SharedPreferenceHelper.LanguagePreferenceHelper.getLanguage(applicationContext)
+        changeLanguage(selected_language)
+
+        //to apply the last Mode the user choose before close the app
+        val selected_Mode= SharedPreferenceHelper.LanguagePreferenceHelper.getMode(applicationContext)
+        if(selected_Mode==0){//light
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
+        else{//dark
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        }
+
 
         bottomNivigation=findViewById(R.id.bottom_navigation)
         addButton=findViewById(R.id.add)
@@ -64,6 +89,17 @@ class HomeActivity : AppCompatActivity() {
         val intent=intent
         finish()
         startActivity(intent)
-
     }
+
+    fun changeLanguage(language:String){
+
+        val locale = Locale(language)
+        val res: Resources =resources
+        val config: Configuration =res.configuration
+        Locale.setDefault(locale)
+        config.setLocale(locale)
+        res.updateConfiguration(config,res.displayMetrics)
+    }
+
+
 }
