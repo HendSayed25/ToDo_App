@@ -13,7 +13,7 @@ _ You can also change the language and mood of The App.
 
 ![Screenshot_2024-03-24-22-38-35-936_com example todoapp](https://github.com/HendSayed25/ToDo_App/assets/125665213/8c2130cc-cc04-496b-965c-bc6be3b052be)
 
-![Screenshot_2024-03-24-22-38-39-118_com example todoapp](https://github.com/HendSayed25/ToDo_App/assets/125665213/0e12fb8b-0169-497f-9b8d-5bf7d04271a3)
+![Screenshot_2024-04-23-18-04-09-582_com example todoapp](https://github.com/HendSayed25/ToDo_App/assets/125665213/00d84ad1-32b7-4a6b-8fb5-b5d23b5e0e8c)
 
 ![Screenshot_2024-03-24-22-39-34-256_com example todoapp](https://github.com/HendSayed25/ToDo_App/assets/125665213/b0bf0aac-91bd-4d65-b8a5-884ca11511ef)
 
@@ -23,9 +23,9 @@ _ You can also change the language and mood of The App.
 
 ![Screenshot_2024-04-17-13-19-53-104_com example todoapp](https://github.com/HendSayed25/ToDo_App/assets/125665213/467d8718-f6b6-4f46-91fa-65ac33063015)
 
-![Screenshot_2024-03-25-17-31-13-358_com example todoapp](https://github.com/HendSayed25/ToDo_App/assets/125665213/e75bdca6-2bec-45a2-91c5-00de7bd62234)
+![Screenshot_2024-04-23-18-28-42-653_com example todoapp](https://github.com/HendSayed25/ToDo_App/assets/125665213/425aaf0a-01ce-447b-bdb9-1220ab5035b0)
 
-![Screenshot_2024-03-24-22-40-33-738_com example todoapp](https://github.com/HendSayed25/ToDo_App/assets/125665213/92af49b3-389e-4bf4-9b1d-ef50f2cc639d)
+![Screenshot_2024-04-23-18-08-48-194_com example todoapp](https://github.com/HendSayed25/ToDo_App/assets/125665213/817d159c-6003-4216-8fe3-56d094cbbbc2)
 
 ![Screenshot_2024-04-17-13-20-20-018_com example todoapp](https://github.com/HendSayed25/ToDo_App/assets/125665213/85075a49-91ed-4d29-9df3-a0f6acd138fb)
 
