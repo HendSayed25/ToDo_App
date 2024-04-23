@@ -29,8 +29,6 @@ _ You can also change the language and mood of The App.
 
 ![Screenshot_2024-04-17-13-20-20-018_com example todoapp](https://github.com/HendSayed25/ToDo_App/assets/125665213/85075a49-91ed-4d29-9df3-a0f6acd138fb)
 
-![Screenshot_2024-04-17-13-20-24-650_com example todoapp](https://github.com/HendSayed25/ToDo_App/assets/125665213/43c89611-9dfd-4793-bd63-18285815766e)
-
 ![Screenshot_2024-04-17-13-20-51-546_com example todoapp](https://github.com/HendSayed25/ToDo_App/assets/125665213/888f1ca1-95b1-4f9a-8f4d-a7a149ba0a71)
 
 
