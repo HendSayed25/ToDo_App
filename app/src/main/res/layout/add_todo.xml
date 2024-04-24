@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
 
 
     <TextView
@@ -67,10 +68,10 @@
         app:layout_constraintTop_toBottomOf="@id/details_layout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="10dp"
+        android:layout_margin="28dp"
         android:text="@string/choosedate"
         android:textSize="15dp"
-        android:paddingLeft="38dp"
+        android:paddingLeft="12dp"
         android:textStyle="bold"
         />
 
@@ -81,11 +82,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ChooseDate"
-        android:layout_margin="10dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="10dp"
         android:text="@string/add"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textAlignment="center"
+        style="@style/BUTTON"
+
 
 
         />

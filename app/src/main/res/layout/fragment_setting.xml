@@ -7,7 +7,7 @@
     <ImageView
         android:id="@+id/backgroundOf_setting"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="110dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -23,7 +23,8 @@
         android:textSize="33dp"
         android:textColor="@color/white"
         android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
 
         />
 
@@ -31,7 +32,7 @@
         android:id="@+id/language"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
+        android:layout_margin="50dp"
         android:text="@string/language"
         android:textSize="23dp"
         android:textStyle="bold"
@@ -45,6 +46,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp"
+        style="@style/SPINNER"
+        android:padding="10dp"
         />
 
     <TextView
@@ -66,6 +69,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp"
+        android:padding="10dp"
+        style="@style/SPINNER"
+
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

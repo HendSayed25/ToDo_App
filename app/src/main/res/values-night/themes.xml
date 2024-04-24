@@ -2,7 +2,6 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.ToDo_App" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-
         <!-- Primary color-->
         <item name="colorPrimary">@color/blue</item>
         <item name="colorPrimaryVariant">@color/blue_dark</item>
@@ -16,6 +15,41 @@
     </style>
 
 
+    <!--night mood -->
+    <style name="CalenderColor">
+        <item name="android:focusedMonthDateColor">@color/blue_dark</item>
+    </style>
+
+    <style name="MAIN_SCREEN">
+        <item name="android:background">#1A1919</item>
+    </style>
+
+    <style name="ADD_SCREEN">
+        <item name="android:background">@color/black</item>
+    </style>
+
+    <style name="TEXT">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TEXTVIEW_BACKGROUND">
+        <item name="android:background">@color/blue</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="BUTTON">
+        <item name="android:backgroundTint">@color/blue</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="FLOATINGBUTTON">
+        <item name="android:background">@color/blue</item>
+        <item name="tint">@color/black</item>
+    </style>
+    <style name="SPINNER">
+        <item name="android:background">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
 
 
     <style name="Theme.ToDo_App" parent="Base.Theme.ToDo_App" />

@@ -25,6 +25,7 @@ class HomeActivity : AppCompatActivity() {
     var todoSettingFragment=SettingFragment()
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home_activity)
