@@ -122,7 +122,7 @@ class AddToDoButtonSheet :BottomSheetDialogFragment(){
         MyDataBase.getInstance(requireContext().applicationContext).todoDao().addTodo(todo)
 
 
-        Toast.makeText(requireContext(),"Task Added Sucessfully",Toast.LENGTH_LONG).show()
+        Toast.makeText(requireContext(),"Todo Added Successfully",Toast.LENGTH_LONG).show()
 
         //call back to activity to notify insertion
         onTodoListner?.onTodoAdded()
